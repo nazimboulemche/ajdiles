@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css%22%3E">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <title>About Us</title>
+</head>
+<style>
+    #sortbox:checked ~ #sortboxmenu {
+        opacity: 1;
+    }
+
+</style>
+<body>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <section>
+      <!--Navbar-->
+      <div class="w-full text-gray-700 bg-white ">
+        <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+          <div class="p-4 flex flex-row items-center justify-between">
+            <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900 uppercase">Logo</a>
+            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+              <!--CROIX--> 
+              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+          <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+            <div @click.away="open = false" class="relative" x-data="{ open: false }">
+              <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                <span>Les expertises</span>
+                <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-5 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              </button>
+              <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                <div class="px-2 py-2 bg-white rounded-md shadow">
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./Informatique.html">Informatique</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./VideoSurveillance.html">Video surveillance</a>
+                  <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./Telephonie.html">Téléphonie</a>
+                </div>
+              </div>
+            </div>    
+            <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 text-white bg-red-600 hover:bg-red-700 focus:bg-red-700" href="./ContactUs.html">Contactez-nous</a>
+          </nav>
+        </div>
+      </div>
+  </section>
+
+    <header class=" border-gray-500">
+        <div class=" justify-between border-gray-500 bg-gradient-to-b  from-green-100 to-blue-100 sm:grid md:grid lg:flex">
+          <img src="images/about.jpg" class="h-911/12 w-6/12 rounded-md sm:w-full md:flex sm:px-10 md:w-full lg:px-0 lg:w-6/12">
+           <div>
+            <p class="text-3xl py-16 text-red-600 font-semibold ml-4 sm:pl-3">A Propos De Nous</p>
+            <p class="flex self-center sm:flex sm:p-8 md:text-xl">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>
+             Nam euismod diam vitae libero porta imperdiet. Duis vulputate et ligula ac convallis.<br>
+             Sed facilisis ullamcorper odio nec luctus. Proin elementum quam arcu,<br>
+              et pellentesque justo pharetra sit amet.
+            </p>
+          </div>
+        </div>
+    </header>
+
+           <!--Chef de l'entreprise-->
+    <section class="pt-8 pb-20 bg-blue-100 flex justify-center">
+      <div class="  sm:grid-rows-2 lg:flex ">
+
+             <!--Aime Sasportas-->
+       <div class=" pt-4 lg:flex sm:pt-40 md:content-center lg:ml-10 xl:flex xl:justify-center">
+        <div class="flex flex-col items-center w-full max-w-xs p-4 bg-gray-300 rounded-3xl md:flex-row">
+            <div class="-mt-28 md:-my-16 md:-ml-32" style="clip-path: url(#roundedPolygon)">
+            <img
+                class="w-auto h-48"
+                src="images/profile.jfif"
+                alt="Aime Sasportas"
+            />
+            </div>
+            <div class="flex flex-col space-y-4">
+            <div class="flex flex-col items-center md:items-start">
+                <h2 class="text-xl font-medium">Aime Sasportas</h2>
+                <p class="text-base font-medium text-gray-400">Fondateur de l'entreprise</p>
+            </div>
+            <div class="flex items-center justify-center space-x-3 md:justify-start space-x-8">
+                <a
+                href="https://www.facebook.com/aime.sasportas"
+                target="_blank"
+                class="transition-transform transform hover:scale-125"
+                >
+                <span class="sr-only">Linkedin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"  class="icon icons8-Facebook-Filled w-8 h-8" >    <path d="M40,0H10C4.486,0,0,4.486,0,10v30c0,5.514,4.486,10,10,10h30c5.514,0,10-4.486,10-10V10C50,4.486,45.514,0,40,0z M39,17h-3 c-2.145,0-3,0.504-3,2v3h6l-1,6h-5v20h-7V28h-3v-6h3v-3c0-4.677,1.581-8,7-8c2.902,0,6,1,6,1V17z"></path></svg>
+                </a>
+                <a
+                href="https://www.linkedin.com/in/aim%C3%A9-sasportas-15aa8922/"
+                target="_blank"
+                class="transition-transform transform hover:scale-125" 
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="h-8 w-8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            </div>
+        </div>
+
+        <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <clipPath id="roundedPolygon">
+                <path
+                d="M79 6.237604307034a32 32 0 0 1 32 0l52.870489570875 30.524791385932a32 32 0 0 1 16 27.712812921102l0 61.049582771864a32 32 0 0 1 -16 27.712812921102l-52.870489570875 30.524791385932a32 32 0 0 1 -32 0l-52.870489570875 -30.524791385932a32 32 0 0 1 -16 -27.712812921102l0 -61.049582771864a32 32 0 0 1 16 -27.712812921102"
+                />
+            </clipPath>
+            </defs>
+        </svg>
+    </div>
+              
+                <!--Joceline Sasportas-->
+    <div class=" pt-4 lg:flex sm:pt-40 md:content-center lg:ml-64">
+        <div class="flex flex-col items-center w-full max-w-xs p-4 bg-gray-300 rounded-3xl md:flex-row">
+            <div class="-mt-28 md:-my-16 md:-ml-32" style="clip-path: url(#roundedPolygon)">
+            <img
+                class="w-auto h-48 "
+                src="images/profile.jfif"
+                alt="Joceline Sasportas"
+            />
+            </div>
+            <div class="flex flex-col space-y-4">
+            <div class="flex flex-col items-center md:items-start">
+                <h2 class="text-xl font-medium">Joceline Sasportas</h2>
+                <p class="text-base font-medium text-gray-400">Co-Fondatrice et Comptable</p>
+            </div>
+            <div class="flex items-center justify-center space-x-3 md:justify-start space-x-8">
+                <a
+                href="https://www.facebook.com/aime.sasportas"
+                target="_blank"
+                class="transition-transform transform hover:scale-125"
+                >
+                <span class="sr-only">Linkedin</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.0" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"  class="icon icons8-Facebook-Filled w-8 h-8" >    <path d="M40,0H10C4.486,0,0,4.486,0,10v30c0,5.514,4.486,10,10,10h30c5.514,0,10-4.486,10-10V10C50,4.486,45.514,0,40,0z M39,17h-3 c-2.145,0-3,0.504-3,2v3h6l-1,6h-5v20h-7V28h-3v-6h3v-3c0-4.677,1.581-8,7-8c2.902,0,6,1,6,1V17z"></path></svg>
+                </a>
+                <a
+                href="https://www.linkedin.com/in/aim%C3%A9-sasportas-15aa8922/"
+                target="_blank"
+                class="transition-transform transform hover:scale-125" 
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="h-8 w-8"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            </div>
+        </div>
+
+        <svg width="0" height="0" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+            <!-- rounded polygon generator => https://weareoutman.github.io/rounded-polygon/ -->
+            <!-- polygon size 190 * 190 almost the same size as the image -->
+            <clipPath id="roundedPolygon">
+                <path
+                d="M79 6.237604307034a32 32 0 0 1 32 0l52.870489570875 30.524791385932a32 32 0 0 1 16 27.712812921102l0 61.049582771864a32 32 0 0 1 -16 27.712812921102l-52.870489570875 30.524791385932a32 32 0 0 1 -32 0l-52.870489570875 -30.524791385932a32 32 0 0 1 -16 -27.712812921102l0 -61.049582771864a32 32 0 0 1 16 -27.712812921102"
+                />
+            </clipPath>
+            </defs>
+        </svg>
+    </div>
+
+     </div> 
+    </section>
+
+           <!--Avis-->
+
+    <section class="bg-gradient-to-b  from-blue-100 to-green-100 from py-20 ">
+        <p class="text-3xl font-bold pb-10 pl-20">Avis :</p>
+        
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+        
+            <div class="swiper-slide text-center flex h-screen justify-center items-center">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+                <div class=" box-border h-72 w-6/12 rounded-3xl bg-gray-300">
+                    <div>
+                      <p class="p-4 pb-48">commentaire</p>
+                    </div>
+                    <div class="rounded-b-3xl flex align-bottom bg-gradient-to-br from-blue-500  to-green-500 ">
+                      <p class="p-4 text-white">client 1</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="swiper-slide text-center flex h-screen justify-center items-center">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+                <div class=" box-border h-72 w-6/12 rounded-3xl bg-gray-300">
+                    <div>
+                      <p class="p-4 pb-48">commentaire</p>
+                    </div>
+                    <div class="rounded-b-3xl flex align-bottom bg-gradient-to-br from-red-500  to-yellow-500 ">
+                      <p class="p-4 text-white">client 2</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="swiper-slide text-center flex h-screen justify-center items-center">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+                <div class=" box-border h-72 w-6/12 rounded-3xl bg-gray-300">
+                    <div>
+                      <p class="p-4 pb-48">commentaire</p>
+                    </div>
+                    <div class="rounded-b-3xl flex align-bottom bg-gradient-to-br from-purple-500  to-red-500 ">
+                      <p class="p-4 text-white">client 3</p>
+                    </div>
+                </div> 
+            </div>
+            <div class="swiper-slide text-center flex h-screen justify-center items-center">
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+                <div class=" box-border h-72 w-6/12 rounded-3xl bg-gray-300">
+                    <div>
+                      <p class="p-4 pb-48">commentaire</p>
+                    </div>
+                    <div class="rounded-b-3xl flex align-bottom bg-gradient-to-br from-yellow-400 to-green-500  ">
+                      <p class="p-4 text-white">client 4</p>
+                    </div>
+                </div> 
+            </div>
+
+        
+        </div>  
+    </div>  
+    <div class="swiper-pagination flex justify-center items-center w-screen mt-4 space-x-2"></div>
+
+    <div class="swiper-scrollbar"></div>
+  </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+  // Optional parameters
+
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+    </script>  
+    </section>
+
+         
+          <!--footer-->
+          <footer class=" border-t-2 border-gray-400  bg-gray-200">
+            <div class="flex justify-around text-gray-700 py-5">
+              <div class="space-y-2 md:my-6">
+                <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 mr-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <div class="text-sm">
+                        <p class=" font-semibold">10 Chemin du belevédère</p>
+                        <p class=" font-semibold">Ormesson-sur-Marne</p>
+                        <p class=" font-semibold">94490</p>
+                   </div>
+                </div>
+    
+                <div class="flex ">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 mr-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                      </svg>
+                  <p class="py-2 font-semibold text-sm">0620114792</p>
+                </div>
+                 <div class="flex">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 mr-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd" />
+                      </svg>
+                  <p class="py-2 font-semibold text-sm">as@ajdiles.fr</p>
+                </div>
+              </div>
+        
+              <div>
+                  <div class="space-x-2">
+                      <p class="py-2 font-bold text-lg md:text-red-600 ml-2">A propos de nous</p>
+                      <div>
+                         <p class="pt-2 font-semibold hidden md:block text-sm"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Nam euismod diam vitae libero porta imperdiet. Duis vulputate et ligula ac convallis.<br>
+                           Sed facilisis ullamcorper odio nec luctus. Proin elementum quam arcu,<br> et pellentesque justo pharetra sit amet. 
+                           </p>
+                           <a class="text-red-600 cursor-pointer font-bold underline mt-20 mr-10 text-sm" href="AboutUs.html">En savoir plus</a>
+                           
+                      </div> 
+                         <a href="https://www.facebook.com/"><i class="text-3xl text-blue-800 fab fa-facebook-square"></i></a>
+                         <a href="https://www.linkedin.com/feed/"><i class="text-3xl text-blue-700 mt-5 fab fa-linkedin"></i></a>
+                  </div>
+              </div>
+            </div>
+          </footer>
+      <script src="app.js"></script>
+</body>
+</html>

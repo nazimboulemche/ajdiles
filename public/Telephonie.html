@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+  #sortbox:checked ~ #sortboxmenu {
+      opacity: 1;
+  }
+
+</style>
+<body>
+    <header>
+        <div class="w-full text-gray-700 bg-white ">
+            <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+              <div class="p-4 flex flex-row items-center justify-between">
+                <a href="./index.html" class="text-lg font-semibold tracking-widest text-gray-900 uppercase">Logo</a>
+                <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+                  <!--CROIX--> 
+                  <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+                    <path x-show="!open" fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    <path x-show="open" fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </button>
+              </div>
+              <nav :class="{'flex': open, 'hidden': !open}" class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+                <div @click.away="open = false" class="relative" x-data="{ open: false }">
+                  <button @click="open = !open" class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
+                    <span>Les expertises</span>
+                    <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-5 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1 "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                  </button>
+                  <div x-show="open" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                    <div class="px-2 py-2 bg-white rounded-md shadow">
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./Informatique.html">Informatique</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./VideoSurveillance.html">Video surveillance</a>
+                      <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="./Telephonie.html">Téléphonie</a>
+                    </div>
+                  </div>
+                </div>    
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200" href="./AboutUs.html">A propos de nous</a>
+                <a class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg  md:mt-0 md:ml-4 text-white bg-red-600 hover:bg-red-700 focus:bg-red-700" href="./ContactUs.html">Contactez-nous</a>
+              </nav>
+            </div>
+          </div>
+    </header>
+<div class=" bg-gradient-to-tr from-yellow-300 to-yellow-100">
+  <div class="text-4xl text-yellow-700 text-center pt-16 font-bold">CONSULTING EN TÉLÉPHONIE</div>
+  <div class="m-16">
+    <div class=" border-yellow-600 border-4 shadow-xl max-w-5xl mx-auto">
+      <table class="table-fixed">
+  
+        <tbody>
+          <tr class="border-b-1   bg-yellow-100 rounded-3xl">
+            <td class="w-1/4 h-60 "><img src="./images/telephonie/phone.png" class=" ml-2 sm:w-32 sm:h-32 h-20 w-20 sm:mx-auto"/></td>
+            <td class="border-l-1 border-black w-3/4 p-6">
+              <p class="mb-5 text-xl font-bold">TÉLÉPHONE</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpaqui officia deserunt mollit anim id est laborum.</p>
+            </td>
+          </tr>
+          <tr class="border-b-1 border-black bg-white">
+            <td class="w-1/4 h-60 "><img src="./images/telephonie/voip256.png" class=" ml-2 sm:w-32 sm:h-32 h-20 w-20 sm:mx-auto"/></td>
+            <td class="border-l-1 border-black w-3/4 p-6">
+              <p class="mb-5 text-xl font-bold">VOIP</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpaqui officia deserunt mollit anim id est laborum.</p>
+            </td>
+          </tr>
+          <tr class="border-b-1 border-black bg-yellow-100">
+            <td class="w-1/4 h-60  "><img src="./images/telephonie/chat256.png" class=" ml-2 sm:w-32 sm:h-32 h-20 w-20 sm:mx-auto"/></td>
+            <td class="border-l-1 border-black w-3/4 p-6">
+              <p class="mb-5 text-xl font-bold">ACCUEIL TÉLÉPHONIQUE</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpaqui officia deserunt mollit anim id est laborum.</p>
+            </td>
+          </tr>
+          <tr class="border-b-1 border-black bg-white">
+            <td class="w-1/4 h-60 "><img src="./images/telephonie/promo256.png" class=" ml-2 sm:w-32 sm:h-32 h-20 w-20 sm:mx-auto"/></td>
+            <td class="border-l-1 border-black w-3/4 p-6 ">
+              <p class="mb-5 text-xl font-bold">RÉDUCTION DU COÛT</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpaqui officia deserunt mollit anim id est laborum.</p>
+            </td>
+          </tr>
+          <tr class="bg-yellow-100">
+            <td class="w-1/4 h-60  "><img src="./images/telephonie/visio256.png" class=" ml-2 sm:w-32 sm:h-32 h-20 w-20 sm:mx-auto"/></td>
+            <td class="border-l-1 border-black w-3/4 p-6">
+              <p class="mb-5 text-xl font-bold">VISIOCONFÉRENCE</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpaqui officia deserunt mollit anim id est laborum.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+<p class="text-yellow-200">.</p>
+    </div>
+    </div>
+  </div>
+
+  <footer class=" border-t-2 border-gray-400  bg-gray-200">
+    <div class="flex justify-around text-gray-700 py-5">
+      <div class="space-y-2 md:my-6">
+        <div class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 mr-5 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <div class="text-sm">
+                <p class=" font-semibold">10 Chemin du belevédère</p>
+                <p class=" font-semibold">Ormesson-sur-Marne</p>
+                <p class=" font-semibold">94490</p>
+           </div>
+        </div>
+
+        <div class="flex ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 mr-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+          <p class="py-2 font-semibold text-sm">0620114792</p>
+        </div>
+         <div class="flex">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 mr-5 text-red-500" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M14.243 5.757a6 6 0 10-.986 9.284 1 1 0 111.087 1.678A8 8 0 1118 10a3 3 0 01-4.8 2.401A4 4 0 1114 10a1 1 0 102 0c0-1.537-.586-3.07-1.757-4.243zM12 10a2 2 0 10-4 0 2 2 0 004 0z" clip-rule="evenodd" />
+              </svg>
+          <p class="py-2 font-semibold text-sm">as@ajdiles.fr</p>
+        </div>
+      </div>
+
+      <div>
+          <div class="space-x-2">
+              <p class="py-2 font-bold text-lg md:text-red-600 ml-2">A propos de nous</p>
+              <div>
+                 <p class="pt-2 font-semibold hidden md:block text-sm"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Nam euismod diam vitae libero porta imperdiet. Duis vulputate et ligula ac convallis.<br>
+                   Sed facilisis ullamcorper odio nec luctus. Proin elementum quam arcu,<br> et pellentesque justo pharetra sit amet. 
+                   </p>
+                   <a class="text-red-600 cursor-pointer font-bold underline mt-20 mr-10 text-sm" href="AboutUs.html">En savoir plus</a>
+                   
+              </div> 
+                 <a href="https://www.facebook.com/"><i class="text-3xl text-blue-800 fab fa-facebook-square"></i></a>
+                 <a href="https://www.linkedin.com/feed/"><i class="text-3xl text-blue-700 mt-5 fab fa-linkedin"></i></a>
+          </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
