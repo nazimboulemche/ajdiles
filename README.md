@@ -14,8 +14,8 @@ npx tailwindcss init
 ```
 
 ## Usage 
-- To run your page you have to click on the **AboutUs.html** file from your local files 
-- **AboutUs.html** is the main page of the website
+- To run your page you have to click on the **index.html** file from your local files 
+- **index.html** is the main page of the website
 
 ```
 <!DOCTYPE html>
