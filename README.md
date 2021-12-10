@@ -1,9 +1,14 @@
 # Aj-Diles 
 Created with HTML5 and Tailwind CSS.
 
+## Demo 
+
+https://user-images.githubusercontent.com/70896734/145607921-f51f4205-2a0c-4b4e-a86d-c19eea60c7aa.mp4
+
 ## Installation 
 - First you need to get to the file using this command
 ```
+
 cd public
 ```
 - Then you have to install the CSS package :
